@@ -1,10 +1,10 @@
-package com.kamjin.test
+package com.kamjin.test.server2
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class WebDeployTestApplicationTests {
+class Server2ApplicationTests {
 
     @Test
     fun contextLoads() {

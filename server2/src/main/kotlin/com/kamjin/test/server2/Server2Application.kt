@@ -1,11 +1,11 @@
-package com.kamjin.test
+package com.kamjin.test.server2
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class WebDeployTestApplication
+class Server2Application
 
 fun main(args: Array<String>) {
-    runApplication<WebDeployTestApplication>(*args)
+    runApplication<Server2Application>(*args)
 }
