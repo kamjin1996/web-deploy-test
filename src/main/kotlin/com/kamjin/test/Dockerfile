@@ -21,8 +21,8 @@ ENV JAVA_OPTS="\
 -XX:+PrintGCTimeStamps \
 -XX:+PrintGCDateStamps \
 -XX:+HeapDumpOnOutOfMemoryError \
--XX:HeapDumpPath=/home/qinliao/model-show/show-gift/ \
--Xloggc:/home/qinliao/model-show/show-gift/gc.log \
+-XX:HeapDumpPath=/home/web_project/deploy_test/ \
+-Xloggc:/home/web_project/deploy_test/gc.log \
 -XX:NumberOfGCLogFiles=5 \
 -XX:GCLogFileSize=20M \
 -Xdump:heap \
