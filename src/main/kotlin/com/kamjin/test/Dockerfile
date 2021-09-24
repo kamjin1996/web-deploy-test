@@ -1,6 +1,6 @@
 FROM adoptopenjdk/openjdk8-openj9:alpine-slim
-VOLUME /home/qinliao/model-show/show-gift/
-ADD gift-application-1.0.0.jar app.jar
+VOLUME /home/web_project/deploy_test/
+ADD web-deploy-test-0.0.1-SNAPSHOT.jar app.jar
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN echo 'Asia/Shanghai' >/etc/timezone
 
