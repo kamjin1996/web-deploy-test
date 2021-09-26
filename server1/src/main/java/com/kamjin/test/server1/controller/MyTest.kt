@@ -12,6 +12,6 @@ class MyTest {
     @GetMapping("hello")
     fun hello(@RequestParam("str") str: String): String {
         println(str)
-        return "$str test"
+        return "$str test2222"
     }
 }
