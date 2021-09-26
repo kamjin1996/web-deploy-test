@@ -1,0 +1,10 @@
+version: '2'
+services:
+  server1:
+    build: server1/Dockerfile
+    container_name: "my-server1"
+    depends_on:
+      - server2 #依赖server2，也就是先启动server2
+  server2:
+    build: server2/Dockerfile
+    container_name: "my-server2"
