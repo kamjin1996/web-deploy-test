@@ -11,6 +11,9 @@ services:
     privileged: true
     depends_on:
       - server2 #依赖server2，也就是先启动server2
+    expose:
+      - "10001"
+      - "20001"
     ports:
       - "10001:10001"
       - "20001:20001"
@@ -24,6 +27,9 @@ services:
       dockerfile: Dockerfile
     container_name: "my-server2"
     privileged: true
+    expose:
+      - "10002"
+      - "20002"
     ports:
       - "10002:10002"
       - "20002:20002"
