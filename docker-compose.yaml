@@ -19,8 +19,6 @@ services:
       - "20001:20001"
 
     tty: true
-    command:
-      - /bin/sh
 
   server2:
     image: my-server2
@@ -39,8 +37,6 @@ services:
       - "20002:20002"
 
     tty: true
-    command:
-      - /bin/sh
 
 #定义网络
 networks:
