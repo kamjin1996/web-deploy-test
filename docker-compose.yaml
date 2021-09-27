@@ -1,22 +1,35 @@
-version: '2'
+version: "3.7"
 services:
   server1:
-    image: image-for-server1
-    build: server1
+    networks:
+      - cloud
+    image: my-server2
+    build:
+      context: server1
+      dockerfile: Dockerfile
     container_name: "my-server1"
+    privileged: true
     depends_on:
       - server2 #依赖server2，也就是先启动server2
-    entrypoint:
-      - java
-      - -jar
-      - ${JAVA_OPTS}
-      - /app.jar
+    entrypoint: [ "java","-jar","${JAVA_OPTS}","-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=20001","/app.jar" ]
+    ports:
+      - "10001:10001"
   server2:
-    image: image-for-server2
-    build: server2
+    image: my-server2
+    networks:
+      - cloud
+    build:
+      context: server2
+      dockerfile: Dockerfile
     container_name: "my-server2"
-    entrypoint:
-      - java
-      - -jar
-      - ${JAVA_OPTS}
-      - /app.jar
+    privileged: true
+    entrypoint: [ "java","-jar","${JAVA_OPTS}","-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=20002","/app.jar" ]
+    ports:
+      - "10002:10002"
+
+#定义网络
+networks:
+  #网络名
+  cloud:
+    #有就使用，没有就会新建网络(默认bridge)
+    external: true
