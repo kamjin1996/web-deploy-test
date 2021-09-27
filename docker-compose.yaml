@@ -14,6 +14,7 @@ services:
     entrypoint: [ "java","-jar","${JAVA_OPTS}","-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=20001","/app.jar" ]
     ports:
       - "10001:10001"
+      - "20001:20001"
   server2:
     image: my-server2
     networks:
@@ -26,10 +27,11 @@ services:
     entrypoint: [ "java","-jar","${JAVA_OPTS}","-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=20002","/app.jar" ]
     ports:
       - "10002:10002"
+      - "20002:20002"
 
 #定义网络
 networks:
   #网络名
   cloud:
     #有就使用，没有就会新建网络(默认bridge)
-    external: true
+    external: false
