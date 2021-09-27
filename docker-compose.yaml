@@ -6,7 +6,7 @@ services:
     depends_on:
       - server2 #依赖server2，也就是先启动server2
     entrypoint:
-      -java
+      - java
       - -jar
       - ${JAVA_OPTS}
       - /app.jar
@@ -14,7 +14,7 @@ services:
     build: server2
     container_name: "my-server2"
     entrypoint:
-      -java
+      - java
       - -jar
       - ${JAVA_OPTS}
       - /app.jar
