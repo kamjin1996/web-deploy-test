@@ -10,7 +10,7 @@ RUN echo -e "https://mirrors.aliyun.com/alpine/v3.6/main/\nhttps://mirrors.aliyu
 # copy arthas
 COPY --from=hengyunabc/arthas:latest /opt/arthas /opt/arthas
 
-ENV JAVA_OPTS="\
+ENTRYPOINT ["java","-jar","\
 -server \
 -XX:+UseParallelGC \
 -XX:ParallelGCThreads=4 \
@@ -32,6 +32,4 @@ ENV JAVA_OPTS="\
 -Djava.security.egd=file:/dev/./urandom \
 -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=20200 \
 -Dspring.profiles.active=dev \
--Duser.timezone=GMT+08 "
-
-ENTRYPOINT ["java","-jar","${JAVA_OPTS}","/app.jar" ]
+-Duser.timezone=GMT+08 ","/app.jar" ]
