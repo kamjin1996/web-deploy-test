@@ -1,4 +1,5 @@
 FROM adoptopenjdk/openjdk8-openj9:alpine-slim
+VOLUME /home/web_project/server
 ADD /target/server2-0.0.1-SNAPSHOT.jar app.jar
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN echo 'Asia/Shanghai' >/etc/timezone

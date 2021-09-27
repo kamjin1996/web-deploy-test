@@ -1,8 +1,6 @@
 version: "2"
 services:
   server1:
-    volumes:
-      - /home/web_project/web-deploy-test/server:/data
     networks:
       - cloud
     image: my-server1
@@ -23,8 +21,6 @@ services:
     tty: true
 
   server2:
-    volumes:
-      - /home/web_project/web-deploy-test/server:/data
     image: my-server2
     networks:
       - cloud
