@@ -3,7 +3,7 @@ services:
   server1:
     networks:
       - cloud
-    image: my-server2
+    image: my-server1
     build:
       context: server1
       dockerfile: Dockerfile
@@ -15,6 +15,7 @@ services:
     ports:
       - "10001:10001"
       - "20001:20001"
+
   server2:
     image: my-server2
     networks:
