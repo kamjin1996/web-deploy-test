@@ -33,4 +33,5 @@ ENV JAVA_OPTS="\
 -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=20200 \
 -Dspring.profiles.active=dev \
 -Duser.timezone=GMT+08 "
-ENTRYPOINT  java  -jar ${JAVA_OPTS}  /app.jar
+
+ENTRYPOINT ["java","-jar","${JAVA_OPTS}","/app.jar" ]
