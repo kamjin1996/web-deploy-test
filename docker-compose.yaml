@@ -18,8 +18,9 @@ services:
       - "10001:10001"
       - "20001:20001"
 
-    stdin_open: true
-    tty: true
+    stdin_open: true #相当于docker run 命令的-i
+    tty: true #相当于docker run 命令的 -t
+
 
   server2:
     image: my-server2
@@ -37,8 +38,8 @@ services:
       - "10002:10002"
       - "20002:20002"
 
-    stdin_open: true
-    tty: true
+    stdin_open: true #相当于docker run 命令的-i
+    tty: true #相当于docker run 命令的 -t
 
 #定义网络
 networks:
