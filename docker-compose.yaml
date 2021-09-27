@@ -17,6 +17,7 @@ services:
     ports:
       - "10001:10001"
       - "20001:20001"
+    tty: true
 
   server2:
     image: my-server2
@@ -33,7 +34,7 @@ services:
     ports:
       - "10002:10002"
       - "20002:20002"
-
+    tty: true
 #定义网络
 networks:
   #网络名
