@@ -2,7 +2,7 @@ version: "3.7"
 services:
   server1:
     volumes:
-      - /home/web_project/web-deploy-test/server1
+      - /home/web_project/web-deploy-test/server1:/home/web_project/web-deploy-test/server1
     networks:
       - cloud
     image: my-server1
@@ -24,7 +24,7 @@ services:
 
   server2:
     volumes:
-      - /home/web_project/web-deploy-test/server2
+      - /home/web_project/web-deploy-test/server2:/home/web_project/web-deploy-test/server2
     image: my-server2
     networks:
       - cloud

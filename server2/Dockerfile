@@ -9,7 +9,7 @@ RUN echo -e "https://mirrors.aliyun.com/alpine/v3.6/main/\nhttps://mirrors.aliyu
 # copy arthas
 COPY --from=hengyunabc/arthas:latest /opt/arthas /opt/arthas
 
-ENTRYPOINT ["/bin/sh","java","-jar","\
+ENTRYPOINT ["java","-jar","\
 -server \
 -XX:+UseParallelGC \
 -XX:ParallelGCThreads=4 \
