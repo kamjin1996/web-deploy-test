@@ -30,6 +30,6 @@ ENTRYPOINT ["java","-jar","\
 -Xshareclasses \
 -Xquickstart \
 -Djava.security.egd=file:/dev/./urandom \
--agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=20201 \
+-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=20002 \
 -Dspring.profiles.active=dev \
 -Duser.timezone=GMT+08 ","/app.jar" ]
