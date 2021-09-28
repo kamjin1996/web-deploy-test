@@ -9,8 +9,6 @@ services:
       dockerfile: Dockerfile
     container_name: "my-server1"
     privileged: true
-    depends_on:
-      - my-server2 #依赖server2，也就是先启动server2
     ports:
       - "10001:10001"
       - "20001:20001"
