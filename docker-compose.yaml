@@ -13,9 +13,13 @@ services:
       - "10001:10001"
       - "20001:20001"
 
+    environment:
+        JPDA_ADDRESS: 20001
+        JPDA_TRANSPORT: dt_socket
+
     stdin_open: true #相当于docker run 命令的-i
     tty: true #相当于docker run 命令的 -t
-
+    command: java -jar -server -XX:+UseParallelGC -XX:ParallelGCThreads=4 -XX:+UseParallelOldGC -XX:+UseAdaptiveSizePolicy -XX:+PrintGCDetails -XX:+PrintTenuringDistribution -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/home/web_project/deploy_test/ -Xloggc:/home/web_project/deploy_test/gc.log -XX:NumberOfGCLogFiles=5 -XX:GCLogFileSize=20M -Xdump:heap -XX:+HeapDumpOnCtrlBreak -Xshareclasses -Xquickstart -Djava.security.egd=file:/dev/./urandom -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=20001 -Dspring.profiles.active=dev -Duser.timezone=GMT+08 /app.jar
 
   my-server2:
     image: my-server2
