@@ -26,7 +26,6 @@ services:
     privileged: true
     ports:
       - "10002:10002"
-      - "20002:20002"
 
     stdin_open: true #相当于docker run 命令的-i
     tty: true #相当于docker run 命令的 -t
