@@ -11,7 +11,6 @@ RUN echo -e "https://mirrors.aliyun.com/alpine/v3.6/main/\nhttps://mirrors.aliyu
 COPY --from=hengyunabc/arthas:latest /opt/arthas /opt/arthas
 
 ENTRYPOINT ["java","-jar","\
--agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=10002 \
 -server \
 -XX:+UseParallelGC \
 -XX:ParallelGCThreads=4 \
@@ -31,7 +30,6 @@ ENTRYPOINT ["java","-jar","\
 -Xshareclasses \
 -Xquickstart \
 -Djava.security.egd=file:/dev/./urandom \
+-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=20001 \
 -Dspring.profiles.active=dev \
--Dfile.encoding=UTF-8 \
--Djava.awt.headless=true \
 -Duser.timezone=GMT+08 ","/app.jar" ]
