@@ -9,12 +9,9 @@ services:
       dockerfile: Dockerfile
     container_name: "my-server1"
     privileged: true
-    expose:
-      - "10001"
-      - "20001"
     ports:
       - "10001:10001"
-      - "20001:20001"
+      - "10002:10002"
 
     stdin_open: true #相当于docker run 命令的-i
     tty: true #相当于docker run 命令的 -t
@@ -29,9 +26,6 @@ services:
       dockerfile: Dockerfile
     container_name: "my-server2"
     privileged: true
-    expose:
-      - "10002"
-      - "20002"
     ports:
       - "10002:10002"
       - "20002:20002"

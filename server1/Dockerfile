@@ -11,7 +11,7 @@ RUN echo -e "https://mirrors.aliyun.com/alpine/v3.6/main/\nhttps://mirrors.aliyu
 COPY --from=hengyunabc/arthas:latest /opt/arthas /opt/arthas
 
 ENTRYPOINT ["java","-jar","\
--agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=20001 \
+-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=10002 \
 -server \
 -XX:+UseParallelGC \
 -XX:ParallelGCThreads=4 \
