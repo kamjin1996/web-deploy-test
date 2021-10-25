@@ -32,4 +32,6 @@ ENTRYPOINT ["java","-jar","\
 -Xquickstart \
 -Djava.security.egd=file:/dev/./urandom \
 -Dspring.profiles.active=dev \
+-Dfile.encoding=UTF-8 \
+-Djava.awt.headless=true \
 -Duser.timezone=GMT+08 ","/app.jar" ]
