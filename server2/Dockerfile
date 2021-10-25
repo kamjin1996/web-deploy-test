@@ -10,6 +10,7 @@ RUN echo -e "https://mirrors.aliyun.com/alpine/v3.6/main/\nhttps://mirrors.aliyu
 # copy arthas
 COPY --from=hengyunabc/arthas:latest /opt/arthas /opt/arthas
 
+EXPOSE 20002
 ENV JAVA_OPTS="\
 -server \
 -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=20002 \

@@ -1,8 +1,6 @@
 version: "3.7"
 services:
   my-server1:
-    networks:
-      - cloud
     image: my-server1
     build:
       context: server1
@@ -11,16 +9,12 @@ services:
     privileged: true
     ports:
       - "10001:10001"
-    expose:
-      - "20001"
 
     stdin_open: true #相当于docker run 命令的-i
     tty: true #相当于docker run 命令的 -t
 
   my-server2:
     image: my-server2
-    networks:
-      - cloud
     build:
       context: server2
       dockerfile: Dockerfile
@@ -28,15 +22,6 @@ services:
     privileged: true
     ports:
       - "10002:10002"
-    expose:
-      - "20002"
 
     stdin_open: true #相当于docker run 命令的-i
     tty: true #相当于docker run 命令的 -t
-
-#定义网络
-networks:
-  #网络名
-  cloud:
-    #有就使用，没有就会新建网络(默认bridge)
-    external: false
